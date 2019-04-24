@@ -1,7 +1,7 @@
 import React from "react";
 
 import { SimonButton } from "../simonButton";
-import "./simonContainer.scss";
+import "./gameContainer.scss";
 
 const sound1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"); 
 const sound2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"); 
@@ -41,12 +41,14 @@ export default class SimonContainer extends React.Component {
   }
 
   render() {
-    return(
-      <div className="simonContainer">
+    const { soundPlaying } = this.state;
+    return (
+      <div className="gameContainer">
+        <h1>Simon Game</h1>
         {buttons.map( (button, i) => (
           <SimonButton key={button.name} button={button} playSound={this.playSound} />
         ))}
-        {this.state.soundPlaying && <div>Playing!</div>}
+        {soundPlaying && <div>Playing!</div>}
         {/*<Control name='center' />*/}
       </div>
     )

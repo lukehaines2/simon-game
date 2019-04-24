@@ -1,0 +1,44 @@
+// Colours
+$redBtnColor: red;
+$greenBtnColor: green;
+$yellowBtnColor: yellow;
+$blueBtnColor: blue;
+
+// Measurements
+$btnMargin: 5px;
+$leftSlant: 25% 0;
+$rightSlant: 0 25%;
+
+@mixin hoverMixin($color) {
+  &:hover {
+    background: lighten($color, 20%);
+  }
+}
+
+.simonBtn {
+  width: calc(50% - (#{$btnMargin} * 2));
+  min-width: 150px;
+  height: 150px;
+  margin: $btnMargin;
+  cursor: pointer;
+  &.red {
+    background: $redBtnColor;
+    border-radius: $leftSlant;
+    @include hoverMixin($redBtnColor);
+  }
+  &.green {
+    background: $greenBtnColor;
+    border-radius: $rightSlant;
+    @include hoverMixin($greenBtnColor);
+  }
+  &.yellow {
+    background: $yellowBtnColor;
+    border-radius: $leftSlant;
+    @include hoverMixin($yellowBtnColor);
+  }
+  &.blue {
+    background: $blueBtnColor;
+    border-radius: $rightSlant;
+    @include hoverMixin($blueBtnColor);
+  }
+}

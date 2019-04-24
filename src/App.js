@@ -1,13 +1,12 @@
 import React from 'react';
 
-
-import SimonContainer from "./components/simonContainer";
+import GameContainer from "./components/gameContainer";
 import './App.css';
 
 function App() {
   return (
     <div className="appContainer">
-      <SimonContainer />
+      <GameContainer />
     </div>
   );
 }
