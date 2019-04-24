@@ -1,0 +1,41 @@
+$redBtnColor: red;
+$greenBtnColor: green;
+$yellowBtnColor: yellow;
+$blueBtnColor: blue;
+
+.simonContainer {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 25px;
+  .simonBtn {
+    width: 150px;
+    height: 150px;
+    &.red {
+      background: $redBtnColor;
+      .hoverMixin($redBtnColor);
+    }
+    &.green {
+      background: $greenBtnColor;
+      .hoverMixin($greenBtnColor)
+    }
+    &.yellow {
+      background: $yellowBtnColor;
+      .hoverMixin($yellowBtnColor)
+    }
+    &.blue {
+      background: $blueBtnColor;
+      .hoverMixin($blueBtnColor)
+    }
+  }
+}
+
+.hoverMixin($color) {
+  &:hover {
+    background: lighten($color, 20%);
+  }
+}
