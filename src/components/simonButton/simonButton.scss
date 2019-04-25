@@ -11,13 +11,13 @@ $rightSlant: 0 25%;
 
 @mixin hoverMixin($color) {
   &:hover {
-    background: lighten($color, 10%);
+    background: lighten($color, 8%);
   }
 }
 
 @mixin playingMixin() {
   &.soundPlaying {
-    opacity: 0.8;
+    opacity: 0.7;
     box-shadow: 0 5px 5px rgba(0,0,0,0.55);
     cursor: not-allowed;
   }

@@ -4,11 +4,10 @@ import cx from "classnames";
 import "./simonButton.scss";
 
 export const SimonButton = props => {
-  const { button, handlePlaySound, soundPlaying } = props;
-  const { name, sound } = button;
+  const { name, index, handlePlaySound, soundPlaying } = props;
   
   const onClick = () => {
-    !soundPlaying && handlePlaySound(sound, button.name);
+    !soundPlaying && handlePlaySound(index, true);
   };
 
   return (
