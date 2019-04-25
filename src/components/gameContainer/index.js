@@ -35,9 +35,12 @@ export default class SimonContainer extends React.Component {
     }
   }
 
-  playSound(sound) {
-    this.setState({ soundPlaying: true })
-    sound.play().then(() => this.setState({ soundPlaying: false }));
+  playSound(sound, name) {
+    this.setState({ soundPlaying: name });
+    sound.playbackRate = 0.5;
+    sound.play().then(() => setTimeout(() => {
+      this.setState({ soundPlaying: false });
+    }, 800 ));
   }
 
   render() {
@@ -45,10 +48,10 @@ export default class SimonContainer extends React.Component {
     return (
       <div className="gameContainer">
         <h1>Simon Game</h1>
-        {buttons.map( (button, i) => (
-          <SimonButton key={button.name} button={button} playSound={this.playSound} />
+        {buttons.map((button, i) => (
+          <SimonButton key={button.name} button={button} handlePlaySound={this.playSound} {...{soundPlaying}} />
         ))}
-        {soundPlaying && <div>Playing!</div>}
+        {/*{soundPlaying && <div>Playing!</div>}*/}
         {/*<Control name='center' />*/}
       </div>
     )

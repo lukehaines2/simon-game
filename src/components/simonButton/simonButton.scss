@@ -11,7 +11,15 @@ $rightSlant: 0 25%;
 
 @mixin hoverMixin($color) {
   &:hover {
-    background: lighten($color, 20%);
+    background: lighten($color, 10%);
+  }
+}
+
+@mixin playingMixin() {
+  &.soundPlaying {
+    opacity: 0.8;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.55);
+    cursor: not-allowed;
   }
 }
 
@@ -25,20 +33,24 @@ $rightSlant: 0 25%;
     background: $redBtnColor;
     border-radius: $leftSlant;
     @include hoverMixin($redBtnColor);
+    @include playingMixin();
   }
   &.green {
     background: $greenBtnColor;
     border-radius: $rightSlant;
     @include hoverMixin($greenBtnColor);
+    @include playingMixin();
   }
   &.yellow {
     background: $yellowBtnColor;
     border-radius: $leftSlant;
     @include hoverMixin($yellowBtnColor);
+    @include playingMixin();
   }
   &.blue {
     background: $blueBtnColor;
     border-radius: $rightSlant;
     @include hoverMixin($blueBtnColor);
+    @include playingMixin();
   }
 }
