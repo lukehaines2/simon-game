@@ -50,7 +50,7 @@ export default class SimonContainer extends React.Component {
   playSequence() {
     const { sequence } = this.state;
     let i = 0;
-    
+
     const interval = setInterval(() => {
       this.playSound(sequence[i]);
       i++;
@@ -72,9 +72,16 @@ export default class SimonContainer extends React.Component {
       });
     } else {
       // wrong answer
-      this.setState({ answered: 0 })
+      this.resetScores();
       alert("GAME OVER");
     }
+  }
+
+  resetScores() {
+    this.setState({
+      answered: 0,
+      score: 0
+    })
   }
 
   render() {
