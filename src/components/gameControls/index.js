@@ -4,7 +4,7 @@ import "./gameControls.scss";
 
 export const GameControls = props => {
   const onClick = () => {
-    props.playSequence();
+    props.startGame();
   };
 
   return (
@@ -12,6 +12,7 @@ export const GameControls = props => {
       <button className='btn btn-danger start' onClick={onClick}>Start</button>
       <p>Sound Playing: {props.soundPlaying}</p>
       <p>Score: {props.score}</p>
+      <p>Level: {props.level}</p>
       ----
       <p>For cheaters! -> {props.sequence}</p>
     </div>
